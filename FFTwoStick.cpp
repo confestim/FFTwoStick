@@ -5,8 +5,7 @@ BAKKESMOD_PLUGIN(FFTwoStick, "fast forfeit", plugin_version, PLUGINTYPE_FREEPLAY
 
 std::shared_ptr<CVarManagerWrapper> _globalCvarManager;
 
-void FFTwoStick::onLoad()
-{
+void FFTwoStick::onLoad() {
     _globalCvarManager = cvarManager;
     LOG("Plugin loaded!");
 
@@ -75,8 +74,11 @@ void FFTwoStick::onTick(std::string eventName)
     }
 }
 
-void FFTwoStick::Render(CanvasWrapper canvas)
-{
+//void FFTwoStick::ff() {
+//
+//}
+
+void FFTwoStick::Render(CanvasWrapper canvas) {
     if (!enabled) return;
 
     Vector2 screenSize = canvas.GetSize();
