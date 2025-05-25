@@ -1,6 +1,7 @@
 ## FFTwoStick
 
 > Be cool! Be toxic! FF immediately!
+
 Best served with [instant suite](https://bakkesplugins.com/plugins/view/14), you can now finally ff in the press of ~a~ two buttons.
 
 Just press L3(left analog) and R3(right analog) and profit!
