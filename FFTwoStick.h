@@ -17,17 +17,22 @@ class FFTwoStick: public BakkesMod::Plugin::BakkesModPlugin
 
 	//std::shared_ptr<bool> enabled;
 	bool enabled = true;
+
 	//Boilerplate
 	void onLoad() override;
 	void onUnload() override;
-	void onTick(std::string eventName);
 	void Render(CanvasWrapper canvas);
 	
+	void onTick(std::string eventName);
+
 	// Presses
-	bool debugL3Pressed = false;
-	bool debugR3Pressed = false;
 	bool lastL3R3State = false;
 	
+	// can forfeit
+	bool canForfeit = false;
+
+	// Forfeit
+	void ff();
 	ControllerInput input;
 public:
 	//void RenderSettings() override; // Uncomment if you wanna render your own tab in the settings menu
