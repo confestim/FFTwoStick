@@ -34,6 +34,9 @@ void FFTwoStick::onLoad() {
     // Register render
     gameWrapper->RegisterDrawable(std::bind(&FFTwoStick::Render, this, std::placeholders::_1));
 
+    l3Index = gameWrapper->GetFNameIndexByString("XboxTypeS_LeftThumbStick");
+    r3Index = gameWrapper->GetFNameIndexByString("XboxTypeS_RightThumbStick");
+
     LOG("L3+R3 forfeit plugin initialized!");
 }
 
@@ -50,9 +53,6 @@ void FFTwoStick::onTick(std::string _) {
         return;
     }
 
-    // Get the input indices
-    int l3Index = gameWrapper->GetFNameIndexByString("XboxTypeS_LeftThumbStick");
-    int r3Index = gameWrapper->GetFNameIndexByString("XboxTypeS_RightThumbStick");
 
     if (l3Index <= 0 || r3Index <= 0) {
         return;
@@ -90,7 +90,7 @@ void FFTwoStick::Render(CanvasWrapper canvas) {
     Vector2 position = { 10, screenSize.Y - 30 };
 
     // Set text color to green
-    canvas.SetColor(0, 255, 0, 255);
+    canvas.SetColor(0, static_cast<unsigned char>(255), 0, static_cast<unsigned char>(255));
 
     canvas.SetPosition(position);
     canvas.DrawString("Press L3+R3 to FF", 1.0f, 1.0f);
